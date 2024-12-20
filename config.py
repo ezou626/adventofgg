@@ -21,7 +21,10 @@ def get_tc() -> list[str]:
     
 def run_solution(process_input, part1_solution, part2_solution, skip_actual = False) -> None:
     print(f'\nDay {_get_problem()[1:]}')
-    for label, reader in [('TEST', get_tc), ('ACTUAL', get_input)]:
+    cases = [('TEST', get_tc)]
+    if not skip_actual:
+        cases.append(('ACTUAL', get_input))
+    for label, reader in cases:
         print(f'\n{label}:')
         processed_lines = None
         try:
