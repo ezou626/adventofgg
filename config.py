@@ -19,7 +19,7 @@ def get_tc() -> list[str]:
     with open(_INPUT_PATH / f'{day}/tc.txt', 'r') as f:
         return f.readlines()
     
-def run_solution(process_input, part1_solution, part2_solution, skip_actual = True) -> None:
+def run_solution(process_input, part1_solution, part2_solution, skip_actual = False) -> None:
     print(f'\nDay {_get_problem()[1:]}')
     for label, reader in [('TEST', get_tc), ('ACTUAL', get_input)]:
         print(f'\n{label}:')
