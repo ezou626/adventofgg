@@ -20,5 +20,5 @@ def generate_day(day: int):
         shutil.copy(_ROOT_PATH / 'template.py', _ROOT_PATH / f'p{formatted_day}.py')
 
 if __name__ == '__main__':
-    for i in range(1, 32):
+    for i in range(1, 26):
         generate_day(i)
