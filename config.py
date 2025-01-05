@@ -29,11 +29,16 @@ def run_solution(process_input, part1_solution, part2_solution, skip_actual = Fa
         processed_lines = None
         try:
             input = reader()
+            if not input:
+                raise EOFError()
             processed_lines = process_input(input)
         except FileNotFoundError:
             print(f'File not found for {label}')
             continue
-        except NotImplementedError as e:
+        except EOFError:
+            print(f'File is empty for {label}')
+            continue
+        except NotImplementedError:
             print('Input processing not implemented')
         if not processed_lines:
             print('Run failed')
